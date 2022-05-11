@@ -6,9 +6,9 @@
 # Visual Studio cache directory
 .vs/
 
- 
+/assets/NoTrack*
+/assets/NoTrackDir/*
 
- 
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
