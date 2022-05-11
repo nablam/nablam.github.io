@@ -13,7 +13,7 @@
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
   </head>
-  <body class="is-preload">
+  <body class="is-preloadr" onload="BuildDecryptSpan()">
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Header -->
@@ -34,6 +34,7 @@
       </nav>
 
       <!-- Banner -->
+
       <section id="banner" class="major">
         <div class="inner">
           <header class="major">
@@ -47,17 +48,33 @@
             </p>
             <ul class="actions">
               <li>
+                <input
+                  id="inputPasscode"
+                  type="text"
+                  placeholder="passcode plz"
+                />
                 <a
                   href="/SelectedPages/ProjectsTimeline01_page.html"
                   class="button next scrolly"
                   >Projects Timeline</a
                 >
+                <section id="SecretLinkSpace"></section>
+              </li>
+              <li>
+                <label for="name">pass</label>
+                <input type="text" />
               </li>
             </ul>
           </div>
         </div>
       </section>
-
+      <section id="SecretLinkSpace">
+        <!-- <span
+          ><a href="/SelectedPages/ProjectsTimeline01_page.html"
+            >ToProjectTimeline01_page</a
+          ></span
+        > -->
+      </section>
       <!-- Main -->
       <div id="main"></div>
 
@@ -81,7 +98,13 @@
               >
             </li>
           </ul>
-          <ul class="copyright"></ul>
+          <ul class="copyright">
+            <li>&copy; NabDev</li>
+            <li>
+              customed base provided by:
+              <a href="https://html5up.net">HTML5 UP</a>
+            </li>
+          </ul>
         </div>
       </footer>
     </div>
@@ -94,5 +117,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/CryptoJSgoogz.js"></script>
+    <script type="text/javascript" src="assets/js/Obfuscation.js"></script>
   </body>
 </html>
