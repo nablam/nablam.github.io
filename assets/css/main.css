@@ -4078,7 +4078,7 @@ body.is-menu-visible #menu .inner {
 
 /* Place the container to the left */
 .timelineleft {
-  left: 10px;
+  left: 12px;
 }
 
 /* Place the container to the right */
@@ -4137,7 +4137,7 @@ body.is-menu-visible #menu .inner {
   /* Full-width containers */
   .timelinecontainer {
     width: 100%;
-    padding-left: 70px;
+    padding-left: 50px;
     padding-right: 25px;
   }
 
@@ -4152,12 +4152,13 @@ body.is-menu-visible #menu .inner {
   /* Make sure all circles are at the same spot */
   .timelineleft::after,
   .timelineright::after {
-    left: 15px;
+    
+    left: 10px;
   }
 
   /* Make all right containers behave like the left ones */
   .timelineright {
-    left: 0%;
+    right: 12px;
   }
 
   img.timelineSmall {
