@@ -11,12 +11,12 @@
     <noscript>
       <link rel="stylesheet" href="/assets/css/noscript.css" />
     </noscript>
+    <script type="text/javascript" src="/assets/js/CryptoJSgoogz.js"></script>
+    <script type="text/javascript" src="/assets/js/Obfuscation.js"></script>
   </head>
 
-  <body class="is-preload" Onload="inject()">
-    <!-- Wrapper -->
+  <body onLoad="doTimelinePageTextContentDeobfuscate()" class="is-preload">
     <div id="wrapper">
-      <!-- Header -->
       <header id="header">
         <a href="index.html" class="logo"
           ><strong>NabDev</strong> <span>archives</span></a
@@ -26,33 +26,23 @@
         </nav>
       </header>
 
-      <!-- Menu -->
       <nav id="menu">
         <ul class="links">
           <li><a href="/index.html">Home</a></li>
-          <!-- <li><a href="Projects_Pi_Landing.html">Pi Projects</a></li> -->
         </ul>
       </nav>
-      <!-- Main -->
       <div id="main" class="alt">
-        <!-- One -->
         <section id="one">
           <div class="inner">
             <header class="major">
               <h1>Personal Projects TimeLine</h1>
             </header>
-            <!-- <span class="image main"><img src="images/WebRover_ProjPic.jpg" alt="" /></span> -->
-
             <p>This is still under construction 5/11/2022.</p>
           </div>
 
-          <div id="secretDiv"></div>
+          <div id="long"></div>
         </section>
-        <!-- section-->
       </div>
-      <!-- Xmaine-->
-
-      <!-- Footer -->
       <footer id="footer">
         <div class="inner">
           <ul class="icons">
@@ -78,7 +68,6 @@
               >
             </li>
           </ul>
-          <!-- -->
           <ul class="copyright">
             <li>&copy; Nabdev</li>
             <li>lamribenn@gmail.com</li>
@@ -90,8 +79,6 @@
         </div>
       </footer>
     </div>
-
-    <!-- Scripts -->
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrolly.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>
@@ -99,7 +86,5 @@
     <script src="/assets/js/breakpoints.min.js"></script>
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/CryptoJSgoogz.js"></script>
-    <script type="text/javascript" src="assets/js/Obfuscation.js"></script>
   </body>
 </html>
