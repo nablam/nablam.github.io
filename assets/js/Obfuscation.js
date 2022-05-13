@@ -2,7 +2,7 @@ function short() {
   document.getElementById("long").innerHTML = "hothere";
 }
 
-function confirmDecrypt() {
+function confirmDecrypt(x) {
   var encrtyptedDataToDecrypt =
     "U2FsdGVkX18PbKaY9pQWdEk4nHMHIUf4yUriHLZKSzYqBDwb+VLmqM7p0mHGfX2Q+zF9rsCTie6hICNuvB5YAOO6+Y90Ki8XyGKgt0uyyhFBRehBPdNPlY/fRFiGtTZfgszPH0MbMP18THHO1A39MA==";
   var enteredPasscode = document.getElementById("inputPasscode").value;
@@ -15,6 +15,7 @@ function confirmDecrypt() {
   if (decrypted.charAt(0) == "<") {
     document.getElementById("SecretLinkSpace").innerHTML = decrypted;
     sessionStorage.setItem("code", enteredPasscode);
+    x.style.display = "none";
   } else {
     document.getElementById("SecretLinkSpace").innerHTML =
       "Sorry  " +
