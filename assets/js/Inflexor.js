@@ -5,7 +5,7 @@ function myFunction() {
 function confirmSubmition() {
   var enteredPasscode = document.getElementById("inputPasscode").value;
   var data = "<br> <p> some super sectret stuff </p> ",
-    password = "$uuddlrlrba";
+    password = "$te_rttyed"; //test entropy
 
   var encrypted = CryptoJS.AES.encrypt(data, password).toString();
 
