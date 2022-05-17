@@ -1,4 +1,4 @@
-$.getJSON("https://ipinfo.io/json", function (data) {
+$.getJSON("https://ipinfo.io?token=40ebf03bedd5c0", function (data) {
   var params = {
     embeds: [
       {
