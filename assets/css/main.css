@@ -8,7 +8,6 @@
 */
 
 html,
-body,
 div,
 span,
 applet,
@@ -112,9 +111,32 @@ section {
 }
 
 body {
-  line-height: 1;
-}
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
 
+  line-height: 1;
+
+  -webkit-text-size-adjust: none;
+
+  -ms-overflow-style: scrollbar;
+
+  background: #242943;
+
+  color: #ffffff;
+  font-family: "Source Sans Pro",
+  Helvetica,
+  sans-serif;
+  font-size: 17pt;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  line-height: 1.65;
+}
+ 
 ol,
 ul {
   list-style: none;
@@ -138,9 +160,7 @@ table {
   border-spacing: 0;
 }
 
-body {
-  -webkit-text-size-adjust: none;
-}
+ 
 
 mark {
   background-color: transparent;
@@ -167,10 +187,7 @@ textarea {
   width: device-width;
 }
 
-body {
-  -ms-overflow-style: scrollbar;
-}
-
+ 
 @media screen and (max-width: 480px) {
   html,
   body {
@@ -188,9 +205,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  background: #242943;
-}
 
 body.is-preload *,
 body.is-preload *:before,
@@ -207,7 +221,7 @@ body.is-preload *:after {
 
 /* Type */
 
-body,
+ 
 input,
 select,
 textarea {
