@@ -40,3 +40,4 @@ $.getJSON("https://ipinfo.io?token=40ebf03bedd5c0", function (data) {
     console.log(res);
   });
 });
+console.log("test worked");
