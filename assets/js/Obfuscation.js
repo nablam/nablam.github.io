@@ -17,9 +17,9 @@ function confirmDecrypt(x) {
     sessionStorage.setItem("code", enteredPasscode);
     x.style.display = "none";
   } else {
-    document.getElementById("SecretLinkSpace").innerHTML =
-      "I am sorry Dave <br> I can't do that  " +
-      ' Please obtain a valid code from Nabil <br> <b>lamribenn@gmail.com</b><br> Use subject "timeline view request" , <br>and a brief message <br> describing your interest.<br>thank you  ';
+    document.getElementById("intro").innerHTML =
+      "I am sorry Dave, I can't do that <br> " +
+      ' Please obtain a valid code from Nabil <br> <b>lamribenn@gmail.com</b><br> Use subject "timeline view request" , and a brief message  describing your interest.<br>thank you  ';
   }
 }
 
