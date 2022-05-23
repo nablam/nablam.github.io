@@ -1,0 +1,45 @@
+{
+  "TextContent": {
+    "textContent": [
+      {
+        "id": "1",
+        "category":"LifeTechArt",
+        "subcategory":"PublicPersonal_HardwareSoftware_ClassicCad",
+        "ctype":"personalProject_Work_Schooling",
+        "date": "1980 03",
+        "title": "The Early Times",
+        "photo": "",
+        "maintext_short":"",
+        "maintext_Long":"North Africa in the 90’s was pretty good but not stellar.  ",
+        "linkToPage":"/SelectedPages/Page_TheEarlyTimes.html",
+        "page_lable":"lbl_1"
+      },
+      {
+        "id": "2",
+        "category":"LifeTechArt",
+        "subcategory":"PublicPersonal_HardwareSoftware_ClassicCad",
+        "ctype":"personalProject_Work_Schooling",
+        "date": "1990 01",
+        "title": "Discovering Electricity",
+        "photo": "",
+        "maintext_short":"",
+        "maintext_Long":"I was reaching the limits of what was possible to create ",
+        "linkToPage":"/SelectedPages/Page_DiscoveringElectricity.html",
+        "page_lable":"lbl_2"
+      },
+      {
+        "id": "3",
+        "category":"LifeTechArt",
+        "subcategory":"PublicPersonal_HardwareSoftware_ClassicCad",
+        "ctype":"personalProject_Work_Schooling",
+        "date": "1991 01",
+        "title": "Playing With Motors",
+        "photo": "",
+        "maintext_short":"",
+        "maintext_Long":"My parents had a subscription to -sciences et vie- a  ",
+        "linkToPage":"/SelectedPages/Page_PlayingWithMotors.html",
+        "page_lable":"lbl_3"
+      } 
+    ]
+  }
+}
