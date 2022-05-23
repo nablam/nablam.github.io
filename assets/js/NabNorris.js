@@ -46,6 +46,7 @@ $("#get-data").on("click", (e) => {
       .replace(/Chuck Norris/g, "Nabil")
       .replace(/ChuckNorris/g, "Nabil")
       .replace(/CHUCKNORRIS/g, "NABIL")
+      .replace(/Norris/g, "Nabil")
       .replace(/Chuck/g, "Nabil");
     $(".mypanel").html(joke);
   });
