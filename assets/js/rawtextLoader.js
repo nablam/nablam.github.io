@@ -9,7 +9,8 @@ const FilePath = FilePath_privat;
 var theEndryptedSTR;
 var decrypted;
 var theDecryptedJsonObject;
-var pass = ""; //is not lolz lolz
+const allowedJsonObjects = [];
+var pass = "LLZ"; //is not lolz lolz
 var theHtmlUlstr = "";
 var StoredPass = sessionStorage.getItem("code");
 
@@ -34,6 +35,7 @@ function loadXMLDoc(myurl, cb) {
 
 loadXMLDoc(FilePath, function (responseText) {
   doDecrypt_Json(responseText);
+  //doDecrypt(responseText);
 });
 
 function doDecrypt(sometext) {
@@ -49,10 +51,24 @@ function doDecrypt_Json(sometext) {
   );
 
   theDecryptedJsonObject = JSON.parse(decrypted);
+
   //let mainTexts = theDecryptedJsonObject.TextContent.textContent;
   let len = theDecryptedJsonObject.TextContent.textContent.length;
 
-  for (var i = len - 1; i >= 0; i--) {
+  for (var y = 0; y < len; y++) {
+    if (theDecryptedJsonObject.TextContent.textContent[y].ctype == "0") {
+      allowedJsonObjects.push(
+        theDecryptedJsonObject.TextContent.textContent[y]
+      );
+    }
+  }
+  let len_ALLOWED = allowedJsonObjects.length;
+
+  // for (var i = len - 1; i >= 0; i--) {
+  //   buildLIS(i);
+  // }
+
+  for (var i = len_ALLOWED - 1; i >= 0; i--) {
     buildLIS(i);
   }
 
@@ -84,52 +100,48 @@ function buildLIS(blockNumber) {
 }
 
 function GetBlock_id(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].id;
+  return allowedJsonObjects[argIndex].id;
 }
 function GetBlock_category(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].category;
+  return allowedJsonObjects[argIndex].category;
 }
 
 function GetBlock_ctype(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].ctype;
+  return allowedJsonObjects[argIndex].ctype;
 }
 
 function GetBlock_date(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].date;
+  return allowedJsonObjects[argIndex].date;
 }
 function GetBlock_date_year(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[
-    argIndex
-  ].date.substring(0, 4);
+  return allowedJsonObjects[argIndex].date.substring(0, 4);
 }
 function GetBlock_date_month(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].date.slice(
-    -2
-  );
+  return allowedJsonObjects[argIndex].date.slice(-2);
 }
 
 function GetBlock_title(argIndex) {
-  var ret = theDecryptedJsonObject.TextContent.textContent[
-    argIndex
-  ].title.replace("And Lead Developer", "");
+  var ret = allowedJsonObjects[argIndex].title.replace(
+    "And Lead Developer",
+    ""
+  );
   return ret;
 }
 
 function GetBlock_imagelink(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].image;
+  return allowedJsonObjects[argIndex].image;
 }
 
 function GetBlock_shorttext(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex]
-    .maintext_short;
+  return allowedJsonObjects[argIndex].maintext_short;
 }
 function GetBlock_LONGtext(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].maintext_Long;
+  return allowedJsonObjects[argIndex].maintext_Long;
 }
 function GetBlock_linkTopage(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].linkToPage;
+  return allowedJsonObjects[argIndex].linkToPage;
 }
 
 function GetBlock_lable(argIndex) {
-  return theDecryptedJsonObject.TextContent.textContent[argIndex].page_lable;
+  return allowedJsonObjects[argIndex].page_lable;
 }
