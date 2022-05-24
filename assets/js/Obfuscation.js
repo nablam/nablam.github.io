@@ -20,6 +20,10 @@ function confirmDecrypt(x) {
     document.getElementById("intro").innerHTML =
       "I am sorry Dave, I can't do that <br> " +
       ' Please obtain a valid code from Nabil <br> <b>lamribenn@gmail.com</b><br> Use subject "timeline view request" , and a brief message  describing your interest.<br>thank you  ';
+    // let utterance = new SpeechSynthesisUtterance(
+    //   "I am sorry Dave, I cant do that"
+    // );
+    // speechSynthesis.speak(utterance);
   }
 }
 

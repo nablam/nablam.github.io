@@ -19,7 +19,8 @@ const chuckCategories = [
   "celebrity",
   "explicit",
 ];
-
+var joke = "me";
+let utterance;
 // const urlByCategory =
 //   "https://api.chucknorris.io/jokes/random?category=" +
 //   chuckCategories[Math.floor(Math.random() * 8)];
@@ -39,7 +40,7 @@ $("#get-data").on("click", (e) => {
     // "Nabil does not need to type-cast. The Chuck-Norris Compiler (CNC) sees through things. All way";
     //    ;
 
-    var joke = original
+    joke = original
       .replace(/porn/g, "ideas")
       .replace(/CNC/g, "NCC")
       .replace(/Chuck-Norris/g, "Nab-il")
@@ -49,5 +50,8 @@ $("#get-data").on("click", (e) => {
       .replace(/Norris/g, "Nabil")
       .replace(/Chuck/g, "Nabil");
     $(".mypanel").html(joke);
+    speechSynthesis.cancel();
+    utterance = new SpeechSynthesisUtterance(joke);
+    speechSynthesis.speak(utterance);
   });
 });
