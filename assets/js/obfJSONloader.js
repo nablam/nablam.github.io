@@ -20,7 +20,6 @@ var xmlhttp = new XMLHttpRequest();
 //var url = "myTutorials.txt";
 
 xmlhttp.onload = function () {
-  alert("hi");
   if (this.readyState == 4 && this.status == 200) {
     theDecryptedJsonObject_02 = JSON.parse(this.responseText);
     //var myArr = JSON.parse(this.responseText);

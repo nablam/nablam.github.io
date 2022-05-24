@@ -30,39 +30,39 @@
   transition: all 0.3s;
 }
 @media screen and (max-width: 425px) {
-  .timeline .point .bocata {
+  .TLPtimeline .TLPpoint .TLPbocata {
     width: 180px;
   }
-  .timeline .point .bocata.little {
+  .TLPtimeline .TLPpoint .TLPbocata.TLPlittle {
     width: 180px;
   }
 }
 @media screen and (min-width: 425px) and (max-width: 576px) {
-  .timeline .point .bocata {
+  .TLPtimeline .TLPpoint .TLPbocata {
     width: 250px;
   }
-  .timeline .point .bocata.little {
+  .TLPtimeline .TLPpoint .TLPbocata.little {
     width: 250px;
   }
 }
 @media screen and (min-width: 577px) {
-  .timeline .point .bocata {
+  .TLPtimeline .TLPpoint .TLPbocata {
     width: 400px;
   }
-  .timeline .point .bocata.little {
+  .TLPtimeline .TLPpoint .TLPbocata.little {
     width: 250px;
   }
 }
-.timeline .point .bocata + .bocata {
+.TLPtimeline .TLPpoint .TLPbocata + .TLPbocata {
   margin-top: 35px;
 }
-.timeline .point:nth-child(odd) .bocata {
+.TLPtimeline .TLPpoint:nth-child(odd) .TLPbocata {
   box-shadow: -6px 10px 20px -20px #4a4a4a;
   left: 100px;
   position: relative;
   z-index: 10;
 }
-.timeline .point:nth-child(odd) .bocata::after {
+.TLPtimeline .TLPpoint:nth-child(odd) .TLPbocata::after {
   content: "";
   width: 0;
   height: 0;
@@ -77,16 +77,16 @@
   border-right: 10px solid #ffffff;
   left: -10px;
 }
-.timeline .point:nth-child(even) .bocata {
+.TLPtimeline .TLPpoint:nth-child(even) .TLPbocata {
   box-shadow: 6px 10px 20px -20px #4a4a4a;
 }
 @media screen and (max-width: 768px) {
-  .timeline .point:nth-child(even) .bocata {
+  .TLPtimeline .TLPpoint:nth-child(even) .TLPbocata {
     left: 100px;
     position: relative;
     z-index: 10;
   }
-  .timeline .point:nth-child(even) .bocata::after {
+  .TLPtimeline .TLPpoint:nth-child(even) .TLPbocata::after {
     content: "";
     width: 0;
     height: 0;
@@ -103,19 +103,19 @@
   }
 }
 @media screen and (min-width: 769px) {
-  .timeline .point:nth-child(even) .bocata {
+  .TLPtimeline .TLPpoint:nth-child(even) .TLPbocata {
     right: 425px;
     position: relative;
     z-index: 10;
   }
 }
 @media screen and (min-width: 769px) and (min-width: 769px) {
-  .timeline .point:nth-child(even) .bocata.little {
+  .TLPtimeline .TLPpoint:nth-child(even) .TLPbocata.little {
     right: 275px;
   }
 }
 @media screen and (min-width: 769px) {
-  .timeline .point:nth-child(even) .bocata::after {
+  .TLPtimeline .TLPpoint:nth-child(even) .TLPbocata::after {
     content: "";
     width: 0;
     height: 0;
@@ -132,21 +132,21 @@
     right: -10px;
   }
 }
-.timeline .point .arrow {
+.TLPtimeline .TLPpoint .TLParrow {
   border: solid #f7f7f7;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 20px;
   transform: rotate(45deg);
 }
-.timeline .point:first-child .arrow, .timeline .point:last-child .arrow {
+.TLPtimeline .TLPpoint:first-child .TLParrow, .TLPtimeline .TLPpoint:last-child .TLParrow {
   border: solid #f7f7f7;
   border-width: 0 12px 12px 0;
   display: inline-block;
   padding: 20px;
   transform: rotate(45deg);
 }
-.timeline .point .arrow-clean {
+.TLPtimeline .TLPpoint .TLParrow-clean {
   border: solid #f7f7f7;
   border-width: 0 20px 20px 0;
   display: inline-block;
@@ -157,7 +157,7 @@
   transform: rotate(45deg);
 }
 
-.title {
+.TLPtitle {
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 1.28px;
