@@ -12,7 +12,7 @@ var theDecryptedJsonObject;
 const allowedJsonObjects = [];
 var pass = "LLZ"; //is not lolz lolz
 var theHtmlUlstr = "";
-var StoredPass = "uuddlrlrBA"; // sessionStorage.getItem("code");
+var StoredPass = sessionStorage.getItem("code");
 
 let xhr = new XMLHttpRequest();
 xhr.responseType = "text";
