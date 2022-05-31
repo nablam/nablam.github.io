@@ -34,8 +34,8 @@ function loadXMLDoc(myurl, cb) {
 }
 
 loadXMLDoc(FilePath, function (responseText) {
-  //doDecrypt_Json(responseText);
   ReplaceImages();
+  //doDecrypt_Json(responseText);
   //doDecrypt(responseText);
 });
 
@@ -73,7 +73,7 @@ function doDecrypt_Json(sometext) {
     theHtmlUlstr += buildArticlev2(i);
   }
 
-  document.getElementById("one").innerHTML = theHtmlUlstr;
+  // document.getElementById("test").innerHTML = "theHtmlUlstr";
 }
 
 function buildArticlev2(blockNumber) {
@@ -118,15 +118,21 @@ function buildArticlev2(blockNumber) {
 
   return articletext;
 }
-
 function ReplaceImages() {
   var tempath =
-    "/images/imagesFromDalle/Super_Copter/Super_Copter_dalle_1_.png";
-  var imgs = document.getElementsByTagName("img");
+    "/images/imagesFromDalle/Lost_School_Year/Lost_School_Year_dalle_1_.png";
+    var imgs = document.getElementsByTagName("img");
+    
+    document.getElementById("test").innerHTML = imgs.length+" images";
+
   for (var i = 0, l = imgs.length; i < l; i++) {
-    var temsrc = imgs[i].src;
+    //  var temsrc = imgs[i].src;
     imgs[i].src = tempath;
   }
+
+     document.getElementById("test").innerHTML +=
+       " all replaced withg " + tempath;;
+
 }
 
 function GetBlock_id(argIndex) {
