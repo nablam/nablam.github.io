@@ -87,7 +87,7 @@ function makeArticleNAive(blockNumber) {
   var arglable = GetBlock_lable(blockNumber);
   var argyear = GetBlock_date_year(blockNumber);
 
-  var randImageIndex = Math.floor(Math.random() * 9); //0 to 9
+  var randImageIndex = Math.floor(Math.random() * 17); //0 to 17
   var vTitleNoSpaces = argTile.replace(/\s/g, "");
   var title_underscored = argTile.replace(/\s/g, "_");
 
