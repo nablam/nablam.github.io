@@ -34,8 +34,9 @@ function loadXMLDoc(myurl, cb) {
 }
 
 loadXMLDoc(FilePath, function (responseText) {
-  //doDecrypt_Json(responseText);
-  ReplaceImages();
+  doDecrypt_Json(responseText);
+
+  //ReplaceImages();
   //doDecrypt(responseText);
 });
 
@@ -56,7 +57,7 @@ function doDecrypt_Json(sometext) {
   //let mainTexts = theDecryptedJsonObject.TextContent.textContent;
   let len = theDecryptedJsonObject.TextContent.textContent.length;
 
-  for (var y = 0; y < len; y++) {
+  for (var y = 0; y < len - 58; y++) {
     if (theDecryptedJsonObject.TextContent.textContent[y].ctype == "0") {
       allowedJsonObjects.push(
         theDecryptedJsonObject.TextContent.textContent[y]
@@ -73,7 +74,77 @@ function doDecrypt_Json(sometext) {
     theHtmlUlstr += buildArticlev2(i);
   }
 
-  document.getElementById("one").innerHTML = theHtmlUlstr;
+  var nabsite = "Hi, I am nabil's site";
+  var digitalarchive = "I'm a sort of digital archive.";
+
+  var PAGE = [
+    '<header id="header" class="alt"><a href="',
+    "/indexV2.html",
+    '" class="logo"><strong>',
+    "Nabdev",
+    "</strong> <span>",
+    "archives",
+    '</span></a><nav><a href="#menu">Menu</a></nav></header><nav id="menu"><ul class="links"><li><a href="',
+    "/indexV2.html",
+    '">',
+    "Home",
+    '</a></li></ul></nav><section id="banner" class="major"><div class="inner"><header class="major"><h1>',
+    nabsite,
+    '</h1></header><div class="content"><section><h5>',
+    'Nabil is not a "web developer", but he built me using html-css-js',
+    '<br /></h5><h5 id="intro">',
+    digitalarchive,
+    '<br /></h5></section></div></div></section><div id="main"><section id="one" class="tiles">',
+
+    theHtmlUlstr,
+
+    '</section><section id="two"><div class="inner"><header class="major"></header><p></p><p></p><ul class="actions"><li><a href="" id="get-data" class="button">about nabil</a></li></ul><ul><p class="mypanel"></p></ul></div></section></div>',
+
+    '<footer id="footer"><div class="inner"><ul class="icons"><li><a href="',
+    "https://www.youtube.com/user/usergroupX",
+    '" class="icon brands alt fa-youtube"><span class="label">Youtube</span></a></li><li><a href="',
+    "https://www.linkedin.com/in/nablam/",
+    '" class="icon brands alt fa-linkedin-in" ><span class="label">LinkedIn</span></a></li><li><a href="',
+    "https://github.com/nablam",
+    '" class="icon brands alt fa-github" ><span class="label">GitHub</span></a></li></ul><ul class="copyright"><li>&copy; NabDev</li><li>2022</li></ul></div></footer>',
+  ];
+
+  var theOUTPUT = "";
+  for (var m = 0; m < PAGE.length; m++) {
+    theOUTPUT += PAGE[m];
+  }
+
+  document.getElementById("test").innerHTML = theOUTPUT;
+  console.log(theOUTPUT);
+  //reloadarticles();
+}
+
+function reloadarticles() {
+  var all_elements = document.getElementsByTagName("article");
+  document.getElementById("test").innerHTML = all_elements.length;
+  for (var c = 0; c < all_elements.length; c++) {
+    var tempcontent = all_elements[c].innerHTML;
+    all_elements[c].innerHTML = tempcontent;
+  }
+
+  let links = document.getElementsByTagName("link");
+  let href0 = links[0].getAttribute("href");
+  links[0].setAttribute("href", "");
+
+  document.getElementById("test").innerHTML +=
+    " links" + links.length + " " + href0 + " <br>";
+
+  var csspath = "/assets/css/main.css";
+  links[0].setAttribute("href", csspath);
+
+  //   for (let i = 0; i < links.length; i++) {
+  //     if (links[i].getAttribute("rel") == "stylesheet") {
+  //       let href = links[i].getAttribute("href").split("?")[0];
+  //       let newHref = href + "?version=" + new Date().getMilliseconds();
+  //      // console.log(newHref);
+  //       links[i].setAttribute("href", newHref);
+  //     }
+  //   }
 }
 
 function buildArticlev2(blockNumber) {
@@ -82,7 +153,7 @@ function buildArticlev2(blockNumber) {
   var arglable = GetBlock_lable(blockNumber);
   var argyear = GetBlock_date_year(blockNumber);
 
-  var randImageIndex = Math.floor(Math.random() * 2); //0 to 9
+  var randImageIndex = Math.floor(Math.random() * 9); //0 to 9
   var vTitleNoSpaces = argTile.replace(/\s/g, "");
   var title_underscored = argTile.replace(/\s/g, "_");
 
@@ -119,15 +190,29 @@ function buildArticlev2(blockNumber) {
   return articletext;
 }
 
-function ReplaceImages() {
-  var tempath =
-    "/images/imagesFromDalle/Super_Copter/Super_Copter_dalle_1_.png";
-  var imgs = document.getElementsByTagName("img");
-  for (var i = 0, l = imgs.length; i < l; i++) {
-    var temsrc = imgs[i].src;
-    imgs[i].src = tempath;
-  }
-}
+// function ReplaceImages() {
+//     var tempath =
+//     "/images/imagesFromDalle/Super_Copter/Super_Copter_dalle_1_.png";
+
+//     document.getElementById("article").innerHTML="lol";
+
+// //   var imgs = document.getElementsByTagName("img");
+// //   for (var i = 0, l = imgs.length; i < l; i++) {
+// //     var temsrc = imgs[i].src;
+// //     imgs[i].src = tempath;
+// //   }
+
+// }
+
+// function MakeNewSpanTAG(vArticleID, vImageID, v_imgpath) {
+
+//      var span0=  '<span class="image"><img id="';
+//     // imglbl_62
+//     var span2= '" src="';
+//   //  /images/imagesFromDalle/Super_Copter/Super_Copter_dalle_1_.png
+//     var span4='" alt="mimi"/></span>';
+
+// }
 
 function GetBlock_id(argIndex) {
   return allowedJsonObjects[argIndex].id;
