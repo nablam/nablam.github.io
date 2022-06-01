@@ -77,7 +77,7 @@ function doDecrypt_Json(sometext) {
     makeArticleNAive(i);
   }
 
-  document.getElementById("debug0").innerHTML = "debugging from artinjector";
+  //document.getElementById("debug0").innerHTML = "debugging from artinjector";
   //reloadarticles();
 }
 
