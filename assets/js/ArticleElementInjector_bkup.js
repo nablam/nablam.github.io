@@ -16,40 +16,6 @@ var pass = "LLZ"; //is not lolz lolz
 var theHtmlUlstr = "";
 var StoredPass = sessionStorage.getItem("code");
 
-//************************************************************** */
-var keylines = [];
-function create_request() {
-  var httpRequest;
-  if (window.XMLHttpRequest) {
-    httpRequest = new XMLHttpRequest();
-  } else if (window.ActiveXObject) {
-    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-  } else {
-    document.getElementById("debug0").innerHTML =
-      "Unable to create XMLHttpRequest object.";
-  }
-
-  return httpRequest;
-}
-
-var httpRequest = create_request();
-
-httpRequest.open("GET", FilePath_CtrDoc, false);
-httpRequest.send(null);
-if (httpRequest.status == 200) {
-  // For non http requests.
-  var resp = httpRequest.responseText.toString();
-
-  // document.write(httpRequest.responseText);
-  keylines = resp.split(/\r\n|\n/);
-  // document.getElementById("debug0").innerHTML = "d" + keylines.length + "  2"; //"workedttpRequest.responseTextttpRequ";
-} else {
-  document.getElementById("debug0").innerHTML = "problem";
-}
-
-//************************************************************** */
-
-//************************************************************** */
 let xhr = new XMLHttpRequest();
 xhr.responseType = "text";
 function loadXMLDoc(myurl, cb) {
@@ -64,11 +30,10 @@ function loadXMLDoc(myurl, cb) {
     }
   };
 
-  xhr.open("GET", myurl, false);
+  xhr.open("GET", myurl, true);
 
   xhr.send();
 }
-//************************************************************** */
 
 function docReady(fn) {
   // see if DOM is already available
@@ -100,10 +65,7 @@ function doDecrypt_Json(sometext) {
   let len = theDecryptedJsonObject.TextContent.textContent.length;
 
   for (var y = 0; y < len; y++) {
-    if (
-      theDecryptedJsonObject.TextContent.textContent[y].ctype == "0" &&
-      keylines[y][0] == "1"
-    ) {
+    if (theDecryptedJsonObject.TextContent.textContent[y].ctype == "0") {
       allowedJsonObjects.push(
         theDecryptedJsonObject.TextContent.textContent[y]
       );
