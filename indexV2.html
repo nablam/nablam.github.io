@@ -101,9 +101,12 @@
         <ul class="copyright">
           <li>&copy; NabDev</li>
           <li>
-            updated 6/9/2022 11:34 am
+            updated 6/9/2022 12:41 am
             
           </li>
+        </ul>
+        <ul>
+          <div id="debug"></div>
         </ul>
       </div>
     </footer>
@@ -123,6 +126,21 @@
   <script src="assets/js/wood.js"></script>
   <script src="assets/js/NabNorris.js"></script>
    <script src="assets/js/rawtextLoader.js"></script>
+       <script>
+         var elem = document.getElementById('debug');
+         var outstr="";
+         
+      if (sessionStorage.getItem("histoview") === null) {
+          outstr = " there is no histvie"; 
+      }
+      outstr= sessionStorage.getItem("histoview");
+      // let numberOfEntries = window.history.length;
+      // let lasturl = window.history.previous.href;
+      // let valueofkey = numberOfEntries + "_" + lasturl;
+      // sessionStorage.setItem("histoview", valueofkey);
+
+        elem.innerHTML=outstr;
+    </script>
         <!-- <script src="assets/js/lumber.js"></script> -->
 
 </body>

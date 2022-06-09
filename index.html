@@ -8,13 +8,27 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <meta http-equiv="refresh" content="0; url = https://2no.co/2I2VM4" />
-
+    <!-- <meta http-equiv="refresh" content="0; url = https://2no.co/2I2VM4" /> -->
+    <meta http-equiv="refresh" content="0.2; url = indexV2.html" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
       <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
   </head>
 
-  <body class="is-preloadr"></body>
+  <body class="is-preloadr">
+    <script>
+      if (sessionStorage.getItem("histoview") === null) {
+        sessionStorage.setItem("histoview", "sss");
+      } else {
+        sessionStorage.setItem("histoview", "exixsts");
+      }
+      let numberOfEntries = window.history.length;
+      let lasturl = "na";
+      lasturl = window.history.previous.href;
+
+      sessionStorage.setItem("histoview", lasturl);
+    </script>
+    <script type="text/javascript" src="assets/js/keymanager.js"></script>
+  </body>
 </html>
