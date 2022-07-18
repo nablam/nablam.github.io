@@ -1,3 +1,21 @@
+function CleanLocal_ALL() {
+  let storage = {};
+  Object.keys(localStorage).forEach((key) => {
+    storage[key] = localStorage.getItem(key);
+  });
+
+  var letstoreEntries = storage.length;
+  var storageEntries = Object.keys(localStorage).length; // localStorage.keys.length;
+
+  var chosenEntries = storageEntries;
+
+  for (var x = 0; x < chosenEntries; x++) {
+    var keyname = Object.keys(localStorage)[x];
+
+    localStorage.removeItem(keyname);
+  }
+}
+
 const urlCategories = "https://api.chucknorris.io/jokes/categories";
 const chuckCategories = [
   "dev",
@@ -27,6 +45,8 @@ let utterance;
 const urlByCategory = "https://api.chucknorris.io/jokes/random?category=dev";
 
 $("#get-data").on("click", (e) => {
+
+  CleanLocal_ALL();
   e.preventDefault();
 
   $.getJSON(urlByCategory, function (data) {
